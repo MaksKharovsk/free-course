@@ -38,10 +38,10 @@ let transformTime = (declinationTime, check) => {
       result  = "";
   
   for (let i = 0; (secIn.length - 1) > i; i++){
-    let foolNum = secIn[i] * residue / secIn[i + 1];
-    let num = Math.floor(foolNum);
+    let fullNum = secIn[i] * residue / secIn[i + 1];
+    let num = Math.floor(fullNum);
     let timeName = declinationTime(num, timeDeclinations[i]);
-    residue = foolNum - num;
+    residue = fullNum - num;
     
     if ( num !== 0) {
       result += (num + " " + timeName + ((i < 2) ? " " : ""));

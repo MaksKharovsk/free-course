@@ -24,12 +24,12 @@ let check = (d, y) => {
   return false;
 }
 
-let calcNumbDeys = (d, m, y, monthNumbers, check) => {
-  if (check(d, y)) return "Не удовлетворяет условию";
+let calcNumbDays = (check) => {
+  if (check(d, y)) return;
   
   let date = new Date(y, monthNumbers[m], d);
   let nextYerDate = new Date(y, 11, 31);
   return (nextYerDate - date) / (1000 * 60 * 60 * 24);
 }
 
-process.stdout.write(calcNumbDeys(d, m, y, monthNumbers, check));
+process.stdout.write(calcNumbDays(check));

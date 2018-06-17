@@ -14,8 +14,8 @@ function calcDays(d, m, y){
     return monthIndex;
   }
   
-  let date = new Date(y, getMonthIndex(m, months), d);
-  let nextDate = new Date(y, 11, 31);  
+  let date = new Date(y, getMonthIndex(m, months), +d + 1);
+  let nextDate = new Date(+y + 1, 11, 31);  
   
   return (nextDate - date) / (1000 * 60 * 60 * 24);
 }
